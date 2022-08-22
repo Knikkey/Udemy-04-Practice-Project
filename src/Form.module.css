@@ -1,0 +1,24 @@
+* {
+  font-size: 62.5%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+
+  font-size: 4rem;
+  gap: 1.6rem;
+  border: #777 1px solid;
+  border-radius: 12px;
+
+  padding: 1.6rem;
+  margin: 4rem;
+  width: 50%;
+}
+
+.btn {
+  max-width: fit-content;
+  padding: 0.2rem 2rem;
+  background-color: navy;
+  color: white;
+}

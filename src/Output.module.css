@@ -1,0 +1,14 @@
+.list {
+  list-style: none;
+  font-size: 4rem;
+
+  margin-top: 4rem;
+  width: 50%;
+}
+
+.li {
+  border: #777 1px solid;
+  border-radius: 12px;
+
+  padding: 1.6rem;
+}
