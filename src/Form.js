@@ -2,17 +2,19 @@ import React, { useState } from "react";
 
 import styles from "./Form.module.css";
 
-const Form = () => {
+const Form = (props) => {
   const [enteredUsername, setEnteredUsername] = useState("");
   const [enteredAge, setEnteredAge] = useState("");
 
   const submitHandler = (e) => {
     e.preventDefault();
+    if (enteredUsername.trim().length === 0) return;
     const data = {
       username: enteredUsername,
       age: enteredAge,
     };
 
+    props.onSaveData(data);
     setEnteredUsername("");
     setEnteredAge("");
     console.log(data);
@@ -28,10 +30,16 @@ const Form = () => {
   return (
     <form className={styles.form} onSubmit={submitHandler}>
       <label>Username</label>
-      <input onChange={usernameHandler}></input>
+      <input
+        type="text"
+        value={enteredUsername}
+        onChange={usernameHandler}
+      ></input>
       <label>Age (Years)</label>
       <input
         type="number"
+        required
+        value={enteredAge}
         min="0"
         max="130"
         step="1"
